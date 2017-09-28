@@ -1,4 +1,4 @@
-# import os
+import os
 
 from flask import (Flask, g, render_template, flash, redirect, url_for,
                   abort)
@@ -18,8 +18,8 @@ HOST = '0.0.0.0'
 app = Flask(__name__)
 # app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
 # db = SQLAlchemy(app)
-# app.secret_key = str(os.getenv("SECRET_KEY"))
-app.secret_key = 'auoesh.bouoastuh.43,uoausoehuosth3ououea.auoub!'
+app.secret_key = str(os.getenv("SECRET_KEY"))
+# app.secret_key = 'auoesh.bouoastuh.43,uoausoehuosth3ououea.auoub!'
 
 login_manager = LoginManager()
 login_manager.init_app(app)
