@@ -2,7 +2,7 @@
 
 Sign up, login, make posts, and follow other users.
 
-Configured for Heroku deployment.
+Configured for PythonAnywhere deployment.
 
 ######################################
 
