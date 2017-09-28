@@ -1,4 +1,4 @@
-import os
+# import os
 
 from flask import (Flask, g, render_template, flash, redirect, url_for,
                   abort)
@@ -6,20 +6,20 @@ from flask.ext.bcrypt import check_password_hash
 from flask.ext.login import (LoginManager, login_user, logout_user,
                              login_required, current_user)
 
-from flask.ext.sqlalchemy import SQLAlchemy
+# from flask.ext.sqlalchemy import SQLAlchemy
 
 import forms
 import models
 
-DEBUG = False
+DEBUG = True
 PORT = 8000
 HOST = '0.0.0.0'
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
-db = SQLAlchemy(app)
-app.secret_key = str(os.getenv("SECRET_KEY"))
-#app.secret_key = 'auoesh.bouoastuh.43,uoausoehuosth3ououea.auoub!'
+# app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
+# db = SQLAlchemy(app)
+# app.secret_key = str(os.getenv("SECRET_KEY"))
+app.secret_key = 'auoesh.bouoastuh.43,uoausoehuosth3ououea.auoub!'
 
 login_manager = LoginManager()
 login_manager.init_app(app)
@@ -177,15 +177,15 @@ def unfollow(username):
 def not_found(error):
     return render_template('404.html'), 404
 
-# if __name__ == '__main__':
-#     models.initialize()
-#     try:
-#         models.User.create_user(
-#             username='',
-#             email='',
-#             password='',
-#             admin=True
-#         ),
-#     except ValueError:
-#         pass
-#     app.run(debug=DEBUG, host=HOST, port=PORT)
+if __name__ == '__main__':
+    models.initialize()
+    try:
+        models.User.create_user(
+            username='testuser',
+            email='testuser@example.com',
+            password='testpassword',
+            admin=True
+        ),
+    except ValueError:
+        pass
+    app.run(debug=DEBUG, host=HOST, port=PORT)
