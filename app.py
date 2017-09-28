@@ -11,7 +11,7 @@ from flask.ext.login import (LoginManager, login_user, logout_user,
 import forms
 import models
 
-DEBUG = True
+DEBUG = False
 PORT = 8000
 HOST = '0.0.0.0'
 
