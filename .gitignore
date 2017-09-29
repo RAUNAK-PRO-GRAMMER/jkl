@@ -41,6 +41,7 @@ venv/
 *.log
 *.sql
 *.sqlite
+social.db
 
 # OS generated files #
 ######################
